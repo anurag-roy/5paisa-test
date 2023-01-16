@@ -1,0 +1,25 @@
+{
+  "name": "5paisa-test",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "login": "tsx login.ts",
+    "loginCheck": "tsx loginCheck.ts",
+    "getMarketFeed": "tsx getMarketFeed.ts",
+    "connectWebSocket": "tsx connectWebSocket.ts"
+  },
+  "keywords": [],
+  "author": "Anurag Roy <anuragroy@duck.com> (https://anuragroy.dev/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/ws": "^8.5.4",
+    "tsx": "^3.12.2",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "ws": "^8.12.0"
+  }
+}
