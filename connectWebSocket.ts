@@ -21,7 +21,7 @@ ws.on('open', () => {
     ClientCode: config.CLIENT_ID,
     // Add Data in array as needed
     // Scripcodes: https://images.5paisa.com/website/scripmaster-csv-format.csv
-    MarketFeedData: [{ Exch: 'N', ExchType: 'U', ScripCode: 11542 }],
+    MarketFeedData: [{ Exch: 'M', ExchType: 'D', ScripCode: 239259 }],
   };
   ws.send(JSON.stringify(data));
 });
