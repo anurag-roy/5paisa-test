@@ -15,7 +15,7 @@ pnpm run login
 Check login and get cookie
 
 ```
-pnpm checkLogin
+pnpm loginCheck
 ```
 
 Connect websocket and get live market depth

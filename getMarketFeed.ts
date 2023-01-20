@@ -6,9 +6,9 @@ const requestList = [
   {
     Exch: 'N',
     ExchType: 'D',
-    Symbol: 'FEDERALBNK 25 Jan 2023 CE 195.00',
+    Symbol: 'BEL 25 Jan 2023',
     Expiry: '20230125',
-    StrikePrice: '160',
+    StrikePrice: '0',
     OptionType: 'XX',
   },
 ];
@@ -24,10 +24,10 @@ const marketPayLoad = {
     password: config.APP_PASSWORD,
   },
   body: {
-    Count: config.CLIENT_ID,
+    Count: 1,
     MarketFeedData: requestList,
     ClientLoginType: 0,
-    LastRequestTime: `/Date(${new Date().getTime()})/`,
+    LastRequestTime: `/Date(${0})/`,
     RefreshRate: 'H',
   },
 };
@@ -39,14 +39,13 @@ try {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(marketPayLoad),
-    credentials: 'include',
   });
 
   if (res.ok) {
     const response = await res.json();
-    console.log('Market Feed response : ', response);
+    console.log('Market Feed response : ', response.body.Data);
   } else {
-    console.error('Some error occured : ', res.body);
+    console.error('Some error occured : ', await res.text());
   }
 } catch (error) {
   console.error('Some error occured : ', error);
